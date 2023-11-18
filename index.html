@@ -1,20 +1,111 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>title</title>
-</head>
-<body>
-    <h1>Joshua Odutola coding portfolio</h1>
-    <p>This website has been created to write about my coding experiences 
-        and projects that I have worked on</p>
-    <button>Past Projects</button>
-    <a href = "">
-    <h2>Past projects</h2>
-    <p></p>
+<html lang="en">
 
-    <h2>Future projects</h2>
-    <p></p>
+<head>
+  <meta charset="UTF-8">
+  <title>Joshua Odutola's Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background:  url("IMG_2797.jpg") center/cover;
+      /* I tried to have a different background image for each tab but had difficulty making it work */
+      color: white;
+      
+      text-align: center;
+    }
+
+    
+    
+    h1 {
+      font-size: 3em; 
+      font-family: 'Comic Sans MS', cursive, sans-serif; 
+      color: #000000;
+    }
+    h2 {
+      color: #fff;
+    }
+
+  
+    .tab {
+      padding: 10px 20px;
+      background-color: #3a339c;
+      color: white;
+      border: none;
+      border-radius: 5px 5px 0 0;
+      margin-right: 10px;
+    }
+
+   /*changing colour of the button when user hovers over it*/
+    .tab:hover {
+      background-color: #053fa2;
+    }
+
+    .tab-content {
+      display: none;
+      margin: 30px auto;
+      /*slightly transparent background so words can be read easily */
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 800px;
+    }
+
+    .tab-content.active {
+      display: block; /*only displays a tab when it is "active"*/
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <h1>Joshua Odutola's Portfolio</h1>
+
+  <div class="tabs">
+    <button class="tab" onclick="showTab('aboutMe')">About Me</button>
+    <button class="tab" onclick="showTab('pastProjects')">Past Projects</button>
+    <button class="tab" onclick="showTab('futureProjects')">Future Projects</button>
+  </div>
+
+  <div id="aboutMe" class="tab-content active">
+    <h2>About Me</h2>
+    <p>My name is Joshua Odutola, I am a year 12 Computer Science student. I also study maths and psychology A-level and play basketball at a high level. This webpage is a portfolio to document my coding projects. 
+        I enjoy computer science and I have also studied it at GCSE where I got a grade 9 in the exam.
+  </div>
+
+  <div id="pastProjects" class="tab-content">
+    <h2>Past Projects</h2>
+    <p>I have not worked on very many projects but some that I have done at my old school were: <br>
+        -Library database system in SQL <br>
+        -Restaurant menu webpage in HTML and CSS<br>
+        -calculator in python<br>
+        -BMI calculator in Visual Basic<br>
+        
+    </p>
+  </div>
+
+  <div id="futureProjects" class="tab-content">
+    <h2>Future Projects</h2>
+    <p>There are several projects I will be doing this school however I would also like to pursue some other projects in my free time.
+        Something I am interested in is creating a rubix rube simulation, possibly as an Artefact for my EPQ. Something else I am interested 
+         in is designing a website (using HTML, CSS and Javascript) for a clothes brand my friend has started where customers will be able to 
+          browse and purchase clothes. </p>
+
+  </div> 
+
+  <script>
+    /*JavaScript for tabs - shows one tab while hiding the others*/
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.classList.remove('active'); /*all tabs start off hidden, this is achieved by removing the class "active"*/
+      });
+
+      document.getElementById(tabId).classList.add('active'); /*this adds the class "active" to the tab currently open*/
+    }
+  </script>
 
 </body>
+
 </html>
